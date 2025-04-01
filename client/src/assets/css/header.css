@@ -1,0 +1,17 @@
+.nav-button {
+    border: none;
+    color: #8e4585;
+    border-radius: 50px;
+    margin-right: 2px;
+    text-transform: none;
+    font-size: 18px;
+    justify-content: flex-end;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 10vh;
+}
