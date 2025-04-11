@@ -1,9 +1,11 @@
-import "./App.css";
-import Header from "./components/header";
-import Footer from "./components/footer";
-import { Box, Typography, Container, Grid, Button } from "@mui/material";
-import {Spacer, HighlightBox} from "./components/resuable";
+import "./assets/css/App.css";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import { Container } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomePage from "./components/Home";
+import AboutPage from "./components/About";
 
 // Custom theme: Light orange and plum
 const theme = createTheme({
@@ -17,77 +19,19 @@ const theme = createTheme({
 
 function App() {
   return (
-    <Container maxWidth="lg" class="app">
-      <Header />
-      <Grid container spacing={2}>
-        <Spacer space={1} />
-
-        <Grid size={10}>
-          <Intro />
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              minHeight: "50vh",
-              justifyContent: "space-around",
-            }}
-          >
-            <Box sx={{ display: "flex", flexDirection: "row", width: "100%" }}>
-              <Typography sx={{ flex: 1, textAlign: "center" }}>
-                What I
-                <span style={{ position: "relative", display: "inline-block" }}>
-                  do
-                </span>
-                <HighlightBox/>
-              </Typography>
-              <Typography sx={{ flex: 1 }}>Where can you find me?</Typography>
-            </Box>
-            <Box sx={{ display: "flex", flexDirection: "row" }}>
-              <Typography sx={{ flex: 1, textAlign: "center" }}>
-                Where can you find me?
-              </Typography>
-              <Typography sx={{ flex: 1 }}>Where can you find me?</Typography>
-            </Box>
-          </Box>
-        </Grid>
-        <Spacer space={1} />
-      </Grid>
-      <Footer />
-    </Container>
+    <ThemeProvider theme={theme}>
+      <Router>
+        <Container maxWidth="lg" class="app">
+          <Header />
+          <Routes>
+            <Route path="/" element={<HomePage/>} />
+            <Route path="/about" element={<AboutPage />} />
+          </Routes>
+          <Footer />
+        </Container>
+      </Router>
+    </ThemeProvider>
   );
 }
-
-const Intro = () => {
-  return (
-    <Box class="intro">
-      <Box className="intro-box" sx={{ ml: 6 }}>
-        <Typography class="intro-text">
-          Hi, I’m <span class="intro-highlight">Antara!</span>
-        </Typography>
-        <Typography sx={{ mb: 4 }}>
-          developer, risk-taker, & enthusiast of life
-        </Typography>
-        <Box display="flex" flexDirection="row" gap={4}>
-          <ThemeProvider theme={theme}>
-            <Button
-              variant="contained"
-              color="primary"
-              sx={{ borderRadius: "20px" }}
-            >
-              Reach Out
-            </Button>
-            <Button variant="text" color="primary">
-              Resume
-            </Button>
-          </ThemeProvider>
-        </Box>
-      </Box>
-      <Box class="intro-box">
-        <div>Insert cat pic here</div>
-      </Box>
-    </Box>
-  );
-};
-
 
 export default App;
