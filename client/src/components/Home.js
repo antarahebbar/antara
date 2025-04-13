@@ -16,8 +16,8 @@ function HomePage() {
             display: "flex",
             flexDirection: "row",
             minHeight: "50vh",
-            marginBottom: "10vh",
-            marginTop: "10vh",
+            mb: "10vh",
+            mt: "10vh",
           }}
         >
           <Box
@@ -45,12 +45,12 @@ function HomePage() {
               justifyContent: "space-around",
             }}
           >
-            <Typography sx={{ fontFamily: "Plus Jakarta Sans", fontSize: 20 }}>
+            <Typography sx={{ fontFamily: "Plus Jakarta Sans", fontSize: 18 }}>
               I’m a software developer who loves product, growth, and fast
               iteration. Scrapiness, problems without obvious solutions, and
               productive team environments call my name.
             </Typography>
-            <Typography sx={{ fontFamily: "Plus Jakarta Sans", fontSize: 20 }}>
+            <Typography sx={{ fontFamily: "Plus Jakarta Sans", fontSize: 18 }}>
               If anything on this website resonated with you, don’t hesitate to
               set up a time to chat. Ping me at antara.hebbar@gmail.com.
             </Typography>
@@ -67,15 +67,15 @@ const Intro = () => {
       <Box class="intro">
         <Box className="intro-box" sx={{ pl: "2em" }}>
           <Typography
-            variant="h3"
+            variant="h2"
             sx={{
               fontFamily: "Poppins",
               fontWeight: 800,
-              mt: "2.5em",
+              mt: "1.5em",
               mb: 1,
             }}
           >
-            Hi, I’m <span class="intro-highlight">Antara!</span>
+            Hi, I’m <span class="highlight">Antara!</span>
           </Typography>
           <Typography sx={{ mb: 5, fontFamily: "Plus Jakarta Sans" }}>
             developer, risk-taker, & enthusiast of life
